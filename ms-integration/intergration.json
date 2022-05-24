@@ -1,0 +1,22 @@
+{
+    "name":"service-name",
+    "version:":"2.3",
+    "dependencies":{
+        "account":"2.5"
+    },
+    "upgrade":{
+        "postgresql":{
+            "2.1":"data/upgrade_from_2.1.sql",
+            "2.2":"data/upgrade_from_2.2.sql"
+        }
+    },
+    "initialization":{
+        "postgresql":"data/init.sql"
+    },
+    "worker":[
+        {
+            "start":"/KafkaService/subscribe",
+            "stop":"/KafkaService/stopAllSubscribe"
+        }
+    ]
+}

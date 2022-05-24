@@ -1,0 +1,5 @@
+ErrorDocument 404 /404.html
+
+Options -Indexes +FollowSymLinks
+RewriteEngine on
+RewriteRule ^(.*)$ index.php?uri=$1 [NC,L,QSA]
